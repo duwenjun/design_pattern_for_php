@@ -3,11 +3,9 @@
 ini_set('display_errors', true);
 error_reporting(E_ALL);
 
-function __autoload($class_name) {
-	include $class_name . '.php';
-}
+include('../autoload.php');
 
-class Client {
+class client {
 
 	//用于实例化
 	private $fly1;
@@ -44,17 +42,17 @@ class Client {
 	}
 
 	private function showFly(IPrototype $fly){
-		echo 'Eye color:' . $fly->eyeColor . '<br/>';
-		echo 'Wing Beats/second:' . $fly->wingBeat . '<br/>';
-		echo 'Eye units:' . $fly->unitEyes . '<br/>';
+		echo 'Eye color:' . $fly->eyeColor . "\n";
+		echo 'Wing Beats/second:' . $fly->wingBeat . "\n";
+		echo 'Eye units:' . $fly->unitEyes . "\n";
 		$genderNow = $fly::gender;
-		echo 'Gender:' . $genderNow . '<br/>';
+		echo 'Gender:' . $genderNow . "\n";
 		if ($genderNow == 'FEMALE') {
-			echo 'Number of eggs:' . $fly->fecundity . '<p/>';
+			echo 'Number of eggs:' . $fly->fecundity . "\n";
 		} else {
-			echo 'Mated:' . $fly->mated . '<p/>';
+			echo 'Mated:' . $fly->mated . "\n";
 		}
 	}
 }
 
-$worker = new Client();
+$worker = new client();
